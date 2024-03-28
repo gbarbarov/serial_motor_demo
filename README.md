@@ -47,10 +47,10 @@ sudo chown username /dev/ttyUSB0
 ## USB serial converter conflicts
 https://bugs.launchpad.net/ubuntu/+source/brltty/+bug/1990189
 
-sudo systemctl stop brltty-udev.service
-sudo systemctl mask brltty-udev.service
-sudo systemctl stop brltty.service
-sudo systemctl disable brltty.service
+- sudo systemctl stop brltty-udev.service
+- sudo systemctl mask brltty-udev.service
+- sudo systemctl stop brltty.service
+- sudo systemctl disable brltty.service
 
 
 
