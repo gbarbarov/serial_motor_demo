@@ -30,12 +30,28 @@ It makes use of the following topics
 - `motor_command` - Subscribes a `MotorCommand`, in rads/sec for each of the two motors
 - `motor_vels` - Publishes a `MotorVels`, motor velocities in rads/sec
 - `encoder_vals` - Publishes an `EncoderVals`, raw encoder counts for each motor
-
+  
+Test
+ros2 topic echo /encoder_vals
 
 
 ## GUI Usage
+ros2 run serial_motor_demo gui
 
 Has two modes, one for raw PWM input (-255 to 255) and one for closed-loop control. In this mode you must first set the limits for the sliders.
+
+
+## USB permission
+sudo chown username /dev/ttyUSB0
+
+## USB serial converter conflicts
+https://bugs.launchpad.net/ubuntu/+source/brltty/+bug/1990189
+
+sudo systemctl stop brltty-udev.service
+sudo systemctl mask brltty-udev.service
+sudo systemctl stop brltty.service
+sudo systemctl disable brltty.service
+
 
 
 ## TODO
@@ -44,6 +60,8 @@ Has two modes, one for raw PWM input (-255 to 255) and one for closed-loop contr
 - Add service for updating PID parameters
 - Stability improvements
 - More parameterisation
+
+
 
 
 
