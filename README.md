@@ -31,9 +31,9 @@ It makes use of the following topics
 - `motor_vels` - Publishes a `MotorVels`, motor velocities in rads/sec
 - `encoder_vals` - Publishes an `EncoderVals`, raw encoder counts for each motor
   
-Test
-ros2 topic echo /encoder_vals
-
+Test from terminals
+Terminal 1 :  ros2 topic echo /encoder_vals
+Terminal 2 :  ros2 topic pub /motor_command serial_motor_demo_msgs/msg/MotorCommand "{mot_1_req_rad_sec: 1.0}"
 
 ## GUI Usage
 ros2 run serial_motor_demo gui
